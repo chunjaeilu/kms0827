@@ -29,4 +29,31 @@ $(function () {
       transform: `translateY(${-(imgNum * imgHeight)}px)`,
     });
   }, intervalTime);
+
+  /* 탭 메뉴 전환 효과 */
+
+  $("#btn-notice").on("click", function () {
+    $("#main-contents .tab-menu a").removeClass("active");
+    $(this).addClass("active");
+
+    $("#notice, #gallery").removeClass("show");
+    $("#notice").addClass("show");
+  });
+
+  $("#btn-gallery").on("click", function () {
+    $("#main-contents .tab-menu a").removeClass("active");
+    $(this).addClass("active");
+
+    $("#notice, #gallery").removeClass("show");
+    $("#gallery").addClass("show");
+  });
+
+  /* pop-up창 띄우기 */
+  $("#notice ul li:first").on("click", function () {
+    $("#pop-up").addClass("show");
+  });
+
+  $("#btn-pop-up-close").on("click", function () {
+    $("#pop-up").removeClass("show");
+  });
 });
