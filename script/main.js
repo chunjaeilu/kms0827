@@ -17,13 +17,16 @@ $(function () {
 
   /* 메인비주얼 슬라이드 효과 */
   let imgNum = 0;
+  let imgHeight = 300;
+  let intervalTime = 3000;
+
   setInterval(function () {
     imgNum++;
     if (imgNum >= 3) {
       imgNum = 0;
     }
     $("#main-visual .slide-box").css({
-      transform: `translateY(${-(imgNum * 300)}px)`,
+      transform: `translateY(${-(imgNum * imgHeight)}px)`,
     });
-  }, 3000);
+  }, intervalTime);
 });
